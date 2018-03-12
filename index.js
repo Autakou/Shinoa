@@ -45,9 +45,7 @@ bot.on('message', message => {
     command = args.shift().toLowerCase();
 
     if (command === "kick") {
-        let modRole = message.guild.roles.find("name", "Mes enfants");
-        if(!message.member.roles.has(modRole)) {
-            return message.reply("as-tu vraiment cru que tu avais la permission d'éxécuter cette commande misérable insecte ? Pff").catch(console.error)
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Tu n'as pas les permissions !");
         }
         if(message.mentions.users.size === 0) {
             return message.reply("mentionne l'utilisateur à expulser, BAKA !").catch(console.error);
@@ -77,6 +75,3 @@ bot.on('message', message => {
             message.guild.channel.find("name", "generalement").send('**${member.user.username}** a été banni(e) du discord pat **${message.author.username}**');
         }).catch(console.error)
 }})
-
-        
-            
