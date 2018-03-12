@@ -61,7 +61,7 @@ bot.on('message', message => {
             message.reply('${member.user.username} a été expuslé avec succès :p !').catch(console.error);
             message.guild.channels.find("name", "generalement").send('**${member.user.username} a été expulsé du discord par **${message.author.username**')
         }).catch(console.error)
-    }
+    });
 
     if (command === "ban") {
         let modRole = message.guild.roles.find("name", "Mes enfants");
@@ -74,4 +74,6 @@ bot.on('message', message => {
             message.reply('${member.user.username} a été banni(e) avec succès :p !').catch(console.error);
             message.guild.channel.find("name", "generalement").send('**${member.user.username}** a été banni(e) du discord pat **${message.author.username}**');
         }).catch(console.error)
-}})
+    }
+
+
